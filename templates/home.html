@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+<a href="logout/">Logout</a>
+
+{% block content %}
+
+<form action="article/" method="GET">
+    <input type="text" name="query"/>
+    <input type="submit" />
+</form>
+
+<ul>
+    {% for article in articles %}
+    <li><a href="article/{{article.id}}">{{article.title}}</a></li>
+    {% endfor %}
+</ul>
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %} {% block content %} {% if not articles %}
+<h2>No data found</h2>
+{% else %}
+
+<ul>
+    {% for article in articles %}
+    <li>
+        <h3>{{article.title}}</h3>
+        <p>{{article.content}}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %} {% endblock content %}
