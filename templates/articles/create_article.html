@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if isSaved %}
+
+<p>
+    <div>
+        <p>{{data}}</p>
+    </div>
+    <a href="">{{message}}</a>
+
+</p>
+{% else %}
+<div>
+    <form action='.' method='post'>
+        {% csrf_token %}
+        {{form.as_p}}
+        <!-- <input type='text' name='title' placeholder="Title" /><br>
+        <input type='textarea' name='content' placeholder="Description" /><br>-->
+        <input type='submit' value='Submit' /> 
+    </form>
+</div>
+{% endif %}
+{% endblock content %}
